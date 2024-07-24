@@ -3,22 +3,24 @@ Alaska Jobs Directory.
 Danielle Prupura
 Justin Willemsen
 
-This program allows employers to: 
-    Add new job postings 
+This program allows employers to:
+    Add new job postings
         Postings are given ID starting with 001
-    Remove postings when a position is filled 
-    
+    Remove postings when a position is filled
+
 It also allows job seekers to:
     View all available job posting summaries
     Filter jobs by title, location, salary range, or company
     View full job posting
-    Submit an inquiry for individual postings (save as an email?) 
+    Submit an inquiry for individual postings (save as an email?)
 
 */
 
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
+
 using namespace std;
 
 struct jobListing
@@ -34,71 +36,91 @@ struct jobListing
 };
 
 // FUNCTIONS
-void employerMenu(vector<jobListing>& jobs);
-void seekerMenu(const vector<jobListing>& jobs);
-void addJob(vector<jobListing>& jobs);
-void deleteJob(vector<jobListing>& jobs);
-void viewJobs(const vector<jobListing>& jobs, int filterBy);
-void displayJob(const jobListing& job);
+void employerMenu(vector<jobListing> &jobs);
+void seekerMenu(const vector<jobListing> &jobs);
+void addJob(vector<jobListing> &jobs);
+void deleteJob(vector<jobListing> &jobs);
+void viewJobs(const vector<jobListing> &jobs, int filterBy);
+void displayJob(const jobListing &job);
 
 int main()
 {
     vector<jobListing> jobs;
+    fstream MyFile("jobs.txt");
+
     int choice;
 
     do
     {
-    cout << "----- ALASKA JOBS MAIN MENU -----\n";
-    cout << "\t1. Employer\n";
-    cout << "\t2. Job Seeker\n";
-    cout << "\t3. Exit\n";
-    cin >> choice;
-    cout << endl;
+        cout << "----- ALASKA JOBS MAIN MENU -----\n";
+        cout << "\t1. Employer\n";
+        cout << "\t2. Job Seeker\n";
+        cout << "\t3. Exit\n";
+        cin >> choice;
+        cout << endl;
 
-    switch (choice) {
-        case 1: employerMenu(jobs); break;
-        case 2: seekerMenu(jobs); break;
-        case 3: cout << "Goodbye.\n"; break;
-        default: cout << "Invalid entry. Try again.\n"; break;
+        switch (choice)
+        {
+        case 1:
+            employerMenu(jobs);
+            break;
+        case 2:
+            seekerMenu(jobs);
+            break;
+        case 3:
+            cout << "Goodbye.\n";
+            break;
+        default:
+            cout << "Invalid entry. Try again.\n";
+            break;
         }
     } while (choice != 3);
-    
+
+    MyFile.close();
+
     return 0;
 }
-
 
 /*
 MENU FOR EMPLOYERS TO ADD/REMOVE JOB POSTINGS
 */
-void employerMenu(vector<jobListing>& jobs)
+void employerMenu(vector<jobListing> &jobs)
 {
     int choice;
 
     do
     {
-    cout << "----- ALASKA JOBS EMPLOYER MENU -----\n";
-    cout << "\t1. Post New Position\n";
-    cout << "\t2. Remove Filled Position\n";
-    cout << "\t3. Return to Main Menu\n";
-    cout << "\t4. Exit\n";
-    cin >> choice;
-    cout << endl;
+        cout << "----- ALASKA JOBS EMPLOYER MENU -----\n";
+        cout << "\t1. Post New Position\n";
+        cout << "\t2. Remove Filled Position\n";
+        cout << "\t3. Return to Main Menu\n";
+        cout << "\t4. Exit\n";
+        cin >> choice;
+        cout << endl;
 
-    switch (choice) {
-        case 1: addJob(jobs); break;
-        case 2: deleteJob(jobs); break;
-        case 3: return;
-        case 4: exit(0);
-        default: cout << "Invalid entry. Try again.\n"; break;
+        switch (choice)
+        {
+        case 1:
+            addJob(jobs);
+            break;
+        case 2:
+            deleteJob(jobs);
+            break;
+        case 3:
+            return;
+        case 4:
+            exit(0);
+        default:
+            cout << "Invalid entry. Try again.\n";
+            break;
         }
-    } while (choice != 3);    
+    } while (choice != 3);
 }
-
 
 /*
 MENU FOR JOB SEEKERS TO VIEW ALL OR FILTER JOB POSTINGS
 */
-void seekerMenu(const vector<jobListing>& jobs)
+void seekerMenu(const vector<jobListing> &jobs)
 {
     int choice;
 
@@ -118,25 +140,31 @@ void seekerMenu(const vector<jobListing>& jobs)
         cout << endl;
         cin.ignore();
 
-        switch (choice) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5: 
-            case 6: 
-                viewJobs(jobs, choice); break;
-            case 7: return;
-            case 8: exit(0);    
-            default: cout << "Invalid entry. Try again.\n"; break;
-            } 
+        switch (choice)
+        {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            viewJobs(jobs, choice);
+            break;
+        case 7:
+            return;
+        case 8:
+            exit(0);
+        default:
+            cout << "Invalid entry. Try again.\n";
+            break;
+        }
     } while (choice != 7);
 }
 
 /*
 FUNCTION TO ADD JOB DETAILS TO A NEW JOB ENTRY IN VECTOR
-*/ 
-void addJob(vector<jobListing>& jobs)
+*/
+void addJob(vector<jobListing> &jobs)
 {
     jobListing newJob;
     int locationFilter;
@@ -172,14 +200,27 @@ void addJob(vector<jobListing>& jobs)
     cin >> locationFilter;
     cout << endl;
 
-    switch (locationFilter) {
-        case 1: newJob.location = "Anchorage"; break;
-        case 2: newJob.location = "Fairbanks"; break;        
-        case 3: newJob.location = "Juneau"; break; 
-        case 4: newJob.location = "Matanuska Valley"; break; 
-        case 5: newJob.location = "Remote"; break; 
-        default: newJob.location = "Unknown"; break;                                             
-        }
+    switch (locationFilter)
+    {
+    case 1:
+        newJob.location = "Anchorage";
+        break;
+    case 2:
+        newJob.location = "Fairbanks";
+        break;
+    case 3:
+        newJob.location = "Juneau";
+        break;
+    case 4:
+        newJob.location = "Matanuska Valley";
+        break;
+    case 5:
+        newJob.location = "Remote";
+        break;
+    default:
+        newJob.location = "Unknown";
+        break;
+    }
 
     cout << "Starting Salary: \n";
     cout << "\t1. $30,000+\n";
@@ -190,48 +231,85 @@ void addJob(vector<jobListing>& jobs)
     cin >> salaryFilter;
     cout << endl;
 
-    switch (salaryFilter) {
-        case 1: newJob.salary = 30000; break;
-        case 2: newJob.salary = 50000; break;        
-        case 3: newJob.salary = 70000; break; 
-        case 4: newJob.salary = 90000; break; 
-        case 5: newJob.salary = 110000; break; 
-        default: newJob.salary = 0; break;      // 0 = "UNKNOWN" STARTING SALARY                     
-        }
+    switch (salaryFilter)
+    {
+    case 1:
+        newJob.salary = 30000;
+        break;
+    case 2:
+        newJob.salary = 50000;
+        break;
+    case 3:
+        newJob.salary = 70000;
+        break;
+    case 4:
+        newJob.salary = 90000;
+        break;
+    case 5:
+        newJob.salary = 110000;
+        break;
+    default:
+        newJob.salary = 0;
+        break; // 0 = "UNKNOWN" STARTING SALARY
+    }
 
     cout << "Education Requirements: \n";
     cout << "\t1. High School\n";
     cout << "\t2. Associates Degree\n";
     cout << "\t3. Bachelors Degree\n";
     cout << "\t4. Masters Degree\n";
-    cout << "\t5. No Education Required\n";    
+    cout << "\t5. No Education Required\n";
     cin >> edReqFilter;
     cout << endl;
 
-    switch (edReqFilter) {
-        case 1: newJob.edReq = "High School"; break;
-        case 2: newJob.edReq = "Associates Degree"; break;        
-        case 3: newJob.edReq = "Bachelors Degree"; break; 
-        case 4: newJob.edReq = "Masters Degree"; break; 
-        case 5: newJob.edReq = "No Education Required"; break; 
-        default: newJob.edReq = "No Education Required"; break;                                             
-        }
+    switch (edReqFilter)
+    {
+    case 1:
+        newJob.edReq = "High School";
+        break;
+    case 2:
+        newJob.edReq = "Associates Degree";
+        break;
+    case 3:
+        newJob.edReq = "Bachelors Degree";
+        break;
+    case 4:
+        newJob.edReq = "Masters Degree";
+        break;
+    case 5:
+        newJob.edReq = "No Education Required";
+        break;
+    default:
+        newJob.edReq = "No Education Required";
+        break;
+    }
 
     cout << "Experience Level: \n";
     cout << "\t1. Entry-Level\n";
     cout << "\t2. Mid-Level\n";
     cout << "\t3. Senior-Level\n";
-    cout << "\t4. No Experience Required\n";      
+    cout << "\t4. No Experience Required\n";
     cin >> expLevelFilter;
     cout << endl;
 
-    switch (expLevelFilter) {
-        case 1: newJob.expLevel = "Entry-Level"; break;
-        case 2: newJob.expLevel = "Mid-Level"; break;        
-        case 3: newJob.expLevel = "Senior-Level"; break; 
-        case 4: newJob.expLevel = "No Experience Required"; break; 
-        default: newJob.expLevel = "No Experience Required"; break;                                             
-        }
+    switch (expLevelFilter)
+    {
+    case 1:
+        newJob.expLevel = "Entry-Level";
+        break;
+    case 2:
+        newJob.expLevel = "Mid-Level";
+        break;
+    case 3:
+        newJob.expLevel = "Senior-Level";
+        break;
+    case 4:
+        newJob.expLevel = "No Experience Required";
+        break;
+    default:
+        newJob.expLevel = "No Experience Required";
+        break;
+    }
 
     cin.ignore();
     cout << "Job Description: \n";
@@ -245,7 +323,7 @@ void addJob(vector<jobListing>& jobs)
 /*
 FUNCTION ALLOWS EMPLOYERS TO REMOVE POSITIONS AFTER THEY ARE FILLED
 */
-void deleteJob(vector<jobListing>& jobs)
+void deleteJob(vector<jobListing> &jobs)
 {
     if (jobs.empty())
     {
@@ -281,7 +359,7 @@ void deleteJob(vector<jobListing>& jobs)
 /*
 FUNCTION ALLOWS JOB SEEKER TO VIEW ALL AVAILABLE JOBS OR A SELECTION BASED ON FILTER
 */
-void viewJobs(const vector<jobListing>& jobs, int filterBy)
+void viewJobs(const vector<jobListing> &jobs, int filterBy)
 {
     string filter;
     if (filterBy == 2) // VIEW JOBS BY TITLE
@@ -331,7 +409,7 @@ void viewJobs(const vector<jobListing>& jobs, int filterBy)
     else if (filterBy == 5) // VIEW JOBS BY EDUCATION REQUIREMENTS
     {
         cout << "Enter an education level to filter by (High School, Associates Degree, Bachelors Degree, Masters Degree, No Education Required): \n";
-        getline(cin, filter);        
+        getline(cin, filter);
 
         for (int i = 0; i < jobs.size(); i++)
         {
@@ -345,7 +423,7 @@ void viewJobs(const vector<jobListing>& jobs, int filterBy)
     else if (filterBy == 6) // VIEW JOBS BY EXPERIENCE LEVEL
     {
         cout << "Enter an experience level to filter by (Entry-Level, Mid-Level, Senior-Level, No Experience Required): \n";
-        getline(cin, filter);        
+        getline(cin, filter);
 
         for (int i = 0; i < jobs.size(); i++)
         {
@@ -363,12 +441,10 @@ void viewJobs(const vector<jobListing>& jobs, int filterBy)
             displayJob(jobs[i]);
         }
     }
-
 }
 
-
 // FUNCTION OUTPUTS SELECTED JOB POSTING
-void displayJob(const jobListing& job)
+void displayJob(const jobListing &job)
 {
     cout << "Job ID: " << job.id << endl;
     cout << "Job Title: " << job.title << endl;
