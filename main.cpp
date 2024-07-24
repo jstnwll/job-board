@@ -19,7 +19,6 @@ It also allows job seekers to:
 #include <iostream>
 #include <string>
 #include <vector>
-#include <fstream>
 
 using namespace std;
 
@@ -46,7 +45,6 @@ void displayJob(const jobListing &job);
 int main()
 {
     vector<jobListing> jobs;
-    fstream MyFile("jobs.txt");
 
     int choice;
 
@@ -75,8 +73,6 @@ int main()
             break;
         }
     } while (choice != 3);
-
-    MyFile.close();
 
     return 0;
 }
