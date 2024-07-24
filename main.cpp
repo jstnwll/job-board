@@ -50,12 +50,23 @@ int main()
 
     do
     {
-        cout << "----- ALASKA JOBS MAIN MENU -----\n";
-        cout << "\t1. Employer\n";
-        cout << "\t2. Job Seeker\n";
-        cout << "\t3. Exit\n";
+        cout << "    _    _           _               _       _\n";
+        cout << "   / \\  | | __ _ ___| | ____ _      | | ___ | |__  ___ \n";
+        cout << "  / _ \\ | |/ _` / __| |/ / _` |  _  | |/ _ \\| '_ \\/ __|\n";
+        cout << " / ___ \\| | (_| \\__ \\   < (_| | | |_| | (_) | |_) \\__ \\\n";
+        cout << "/_/   \\_\\_|\\__,_|___/_|\\_\\__,_|  \\___/ \\___/|_.__/|___/\n";
+        cout << " __  __       _         __  __\n";
+        cout << "|  \\/  | __ _(_)_ __   |  \\/  | ___ _ __  _   _\n";
+        cout << "| |\\/| |/ _` | | '_ \\  | |\\/| |/ _ \\ '_ \\| | | |\n";
+        cout << "| |  | | (_| | | | | | | |  | |  __/ | | | |_| |\n";
+        cout << "|_|  |_|\\__,_|_|_| |_| |_|  |_|\\___|_| |_|\\__,_|\n";
+        cout << '\n';
+        cout << "1. Employer\n";
+        cout << "2. Job Seeker\n";
+        cout << "3. Exit\n";
+        cout << "\n";
         cin >> choice;
-        cout << endl;
+        cout << "\n";
 
         switch (choice)
         {
@@ -86,13 +97,25 @@ void employerMenu(vector<jobListing> &jobs)
 
     do
     {
-        cout << "----- ALASKA JOBS EMPLOYER MENU -----\n";
-        cout << "\t1. Post New Position\n";
-        cout << "\t2. Remove Filled Position\n";
-        cout << "\t3. Return to Main Menu\n";
-        cout << "\t4. Exit\n";
+        cout << "    _    _           _               _       _\n";
+        cout << "   / \\  | | __ _ ___| | ____ _      | | ___ | |__  ___ \n";
+        cout << "  / _ \\ | |/ _` / __| |/ / _` |  _  | |/ _ \\| '_ \\/ __|\n";
+        cout << " / ___ \\| | (_| \\__ \\   < (_| | | |_| | (_) | |_) \\__ \\\n";
+        cout << "/_/   \\_\\_|\\__,_|___/_|\\_\\__,_|  \\___/ \\___/|_.__/|___/\n";
+        cout << " _____                 _                         __  __\n";
+        cout << "| ____|_ __ ___  _ __ | | ___  _   _  ___ _ __  |  \\/  | ___ _ __  _   _\n";
+        cout << "|  _| | '_ ` _ \\| '_ \\| |/ _ \\| | | |/ _ \\ '__| | |\\/| |/ _ \\ '_ \\| | | |\n";
+        cout << "| |___| | | | | | |_) | | (_) | |_| |  __/ |    | |  | |  __/ | | | |_| |\n";
+        cout << "|_____|_| |_| |_| .__/|_|\\___/ \\__, |\\___|_|    |_|  |_|\\___|_| |_|\\__,_|\n";
+        cout << "                |_|            |___/\n";
+        cout << '\n';
+        cout << "1. Post New Position\n";
+        cout << "2. Remove Filled Position\n";
+        cout << "3. Return to Main Menu\n";
+        cout << "4. Exit\n";
+        cout << "\n";
         cin >> choice;
-        cout << endl;
+        cout << "\n";
 
         switch (choice)
         {
@@ -122,18 +145,29 @@ void seekerMenu(const vector<jobListing> &jobs)
 
     do
     {
-        cout << "----- ALASKA JOBS JOB SEEKER MENU -----\n";
-        cout << "\t1. View All\n";
-        cout << "\tFilter By:\n";
-        cout << "\t\t2. Title\n";
-        cout << "\t\t3. Location\n";
-        cout << "\t\t4. Starting Salary\n";
-        cout << "\t\t5. Education Requirement\n";
-        cout << "\t\t6. Experience Level\n";
-        cout << "\t7. Return to Main Menu\n";
-        cout << "\t8. Exit\n";
+        cout << "    _    _           _               _       _\n";
+        cout << "   / \\  | | __ _ ___| | ____ _      | | ___ | |__  ___ \n";
+        cout << "  / _ \\ | |/ _` / __| |/ / _` |  _  | |/ _ \\| '_ \\/ __|\n";
+        cout << " / ___ \\| | (_| \\__ \\   < (_| | | |_| | (_) | |_) \\__ \\\n";
+        cout << "/_/   \\_\\_|\\__,_|___/_|\\_\\__,_|  \\___/ \\___/|_.__/|___/\n";
+        cout << " ____            _               __  __ \n";
+        cout << "/ ___|  ___  ___| | _____ _ __  |  \\/  | ___ _ __  _   _\n";
+        cout << "\\___ \\ / _ \\/ _ \\ |/ / _ \\ '__| | |\\/| |/ _ \\ '_ \\| | | |\n";
+        cout << " ___) |  __/  __/   <  __/ |    | |  | |  __/ | | | |_| |\n";
+        cout << "|____/ \\___|\\___|_|\\_\\___|_|    |_|  |_|\\___|_| |_|\\__,_|\n";
+        cout << "\n";
+        cout << "1. View All\n";
+        cout << "Filter By:\n";
+        cout << "\t2. Title\n";
+        cout << "\t3. Location\n";
+        cout << "\t4. Starting Salary\n";
+        cout << "\t5. Education Requirement\n";
+        cout << "\t6. Experience Level\n";
+        cout << "7. Return to Main Menu\n";
+        cout << "8. Exit\n";
+        cout << "\n";
         cin >> choice;
-        cout << endl;
+        cout << "\n";
         cin.ignore();
 
         switch (choice)
@@ -194,7 +228,7 @@ void addJob(vector<jobListing> &jobs)
     cout << "\t4. Matanuska Valley\n";
     cout << "\t5. Remote\n";
     cin >> locationFilter;
-    cout << endl;
+    cout << "\n";
 
     switch (locationFilter)
     {
@@ -225,7 +259,7 @@ void addJob(vector<jobListing> &jobs)
     cout << "\t4. $90,000+\n";
     cout << "\t5. $110,000+\n";
     cin >> salaryFilter;
-    cout << endl;
+    cout << "\n";
 
     switch (salaryFilter)
     {
@@ -256,7 +290,7 @@ void addJob(vector<jobListing> &jobs)
     cout << "\t4. Masters Degree\n";
     cout << "\t5. No Education Required\n";
     cin >> edReqFilter;
-    cout << endl;
+    cout << "\n";
 
     switch (edReqFilter)
     {
@@ -286,7 +320,7 @@ void addJob(vector<jobListing> &jobs)
     cout << "\t3. Senior-Level\n";
     cout << "\t4. No Experience Required\n";
     cin >> expLevelFilter;
-    cout << endl;
+    cout << "\n";
 
     switch (expLevelFilter)
     {
@@ -310,7 +344,7 @@ void addJob(vector<jobListing> &jobs)
     cin.ignore();
     cout << "Job Description: \n";
     getline(cin, newJob.description);
-    cout << endl;
+    cout << '\n';
 
     jobs.push_back(newJob);
     cout << "Job Posted!\n\n";
@@ -331,9 +365,9 @@ void deleteJob(vector<jobListing> &jobs)
     cout << "Current job postings.\n";
     for (int i = 0; i < jobs.size(); i++)
     {
-        cout << "ID: " << jobs[i].id << "\tCompany: " << jobs[i].company << "\tTitle: " << jobs[i].title << endl;
+        cout << "ID: " << jobs[i].id << "\tCompany: " << jobs[i].company << "\tTitle: " << jobs[i].title << '\n';
     }
-    cout << endl;
+    cout << "\n";
 
     int id;
     cout << "Enter the Job ID to delete.\n";
@@ -442,13 +476,13 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
 // FUNCTION OUTPUTS SELECTED JOB POSTING
 void displayJob(const jobListing &job)
 {
-    cout << "Job ID: " << job.id << endl;
-    cout << "Job Title: " << job.title << endl;
-    cout << "Company: " << job.company << endl;
-    cout << "Location: " << job.location << endl;
-    cout << "Starting Salary: $" << job.salary << endl;
-    cout << "Education Required: " << job.edReq << endl;
-    cout << "Experience Required: " << job.expLevel << endl;
-    cout << "Description: " << job.description << endl;
-    cout << endl;
+    cout << "Job ID: " << job.id << '\n';
+    cout << "Job Title: " << job.title << '\n';
+    cout << "Company: " << job.company << '\n';
+    cout << "Location: " << job.location << '\n';
+    cout << "Starting Salary: $" << job.salary << '\n';
+    cout << "Education Required: " << job.edReq << '\n';
+    cout << "Experience Required: " << job.expLevel << '\n';
+    cout << "Description: " << job.description << '\n';
+    cout << "\n";
 }
