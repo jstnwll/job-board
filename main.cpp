@@ -1,19 +1,16 @@
 /*
 Alaska Jobs Directory.
-Danielle Prupura
 Justin Willemsen
+Danielle Prupura
 
 This program allows employers to:
     Add new job postings
-        Postings are given ID starting with 001
+        Postings are given ID starting with 1
     Remove postings when a position is filled
 
 It also allows job seekers to:
-    View all available job posting summaries
+    View all available job postings
     Filter jobs by title, location, salary range, or company
-    View full job posting
-    Submit an inquiry for individual postings (save as an email?)
-
 */
 
 #include <iostream>
@@ -357,7 +354,7 @@ void deleteJob(vector<jobListing> &jobs)
 {
     if (jobs.empty())
     {
-        cout << "There are no job postings to delete.\n";
+        cout << "There are no job postings to remove.\n";
         return;
     }
 
@@ -370,7 +367,7 @@ void deleteJob(vector<jobListing> &jobs)
     cout << "\n";
 
     int id;
-    cout << "Enter the Job ID to delete.\n";
+    cout << "Enter the Job ID to remove.\n";
     cin >> id;
 
     for (int i = 0; i < jobs.size(); i++)
@@ -378,7 +375,7 @@ void deleteJob(vector<jobListing> &jobs)
         if (id == jobs[i].id)
         {
             jobs.erase(jobs.begin() + i);
-            cout << "Job deleted.\n";
+            cout << "Job removed.\n";
             return;
         }
     }
@@ -471,6 +468,7 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
             displayJob(jobs[i]);
         }
     }
+    cout << '\n';
 }
 
 // FUNCTION OUTPUTS SELECTED JOB POSTING
@@ -484,5 +482,5 @@ void displayJob(const jobListing &job)
     cout << "Education Required: " << job.edReq << '\n';
     cout << "Experience Required: " << job.expLevel << '\n';
     cout << "Description: " << job.description << '\n';
-    cout << "\n";
+    cout << '\n';
 }
