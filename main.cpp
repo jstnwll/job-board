@@ -16,6 +16,7 @@ It also allows job seekers to:
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -38,10 +39,28 @@ void addJob(vector<jobListing> &jobs);
 void deleteJob(vector<jobListing> &jobs);
 void viewJobs(const vector<jobListing> &jobs, int filterBy);
 void displayJob(const jobListing &job);
+void addToFile(const jobListing &job);
+void deleteFromFile(const vector<jobListing> &jobs);
 
 int main()
 {
+    ifstream file("jobs.txt");
     vector<jobListing> jobs;
+
+    jobListing job;
+    while (file >> job.id)
+    {
+        file.ignore();
+        getline(file, job.title);
+        getline(file, job.company);
+        getline(file, job.location);
+        file >> job.salary;
+        file.ignore();
+        getline(file, job.edReq);
+        getline(file, job.expLevel);
+        getline(file, job.description);
+        jobs.push_back(job);
+    }
 
     int choice;
 
@@ -81,6 +100,8 @@ int main()
             break;
         }
     } while (choice != 3);
+
+    file.close();
 
     return 0;
 }
@@ -344,6 +365,7 @@ void addJob(vector<jobListing> &jobs)
     cout << '\n';
 
     jobs.push_back(newJob);
+    addToFile(newJob);
     cout << "Job Posted!\n\n";
 }
 
@@ -359,12 +381,13 @@ void deleteJob(vector<jobListing> &jobs)
     }
 
     // DISPLAY AVAILABLE JOBS TO DELETE BY ID, COMPANY, AND TITLE
-    cout << "Current job postings.\n";
+    cout << "Current job postings:\n\n";
     for (int i = 0; i < jobs.size(); i++)
     {
-        cout << "ID: " << jobs[i].id << "\tCompany: " << jobs[i].company << "\tTitle: " << jobs[i].title << '\n';
+        cout << "ID: " << jobs[i].id << '\n';
+        cout << "Company: " << jobs[i].company << '\n';
+        cout << "Title: " << jobs[i].title << "\n\n";
     }
-    cout << "\n";
 
     int id;
     cout << "Enter the Job ID to remove.\n";
@@ -375,8 +398,9 @@ void deleteJob(vector<jobListing> &jobs)
         if (id == jobs[i].id)
         {
             jobs.erase(jobs.begin() + i);
+            deleteFromFile(jobs);
             cout << "Job removed.\n";
-            return;
+            break;
         }
     }
 
@@ -483,4 +507,41 @@ void displayJob(const jobListing &job)
     cout << "Experience Required: " << job.expLevel << '\n';
     cout << "Description: " << job.description << '\n';
     cout << '\n';
+}
+
+// FUNCTION ADDS JOB TO JOBS.TXT
+void addToFile(const jobListing &job)
+{
+    ofstream file("jobs.txt", ios::app);
+
+    file << job.id << '\n';
+    file << job.title << '\n';
+    file << job.company << '\n';
+    file << job.location << '\n';
+    file << job.salary << '\n';
+    file << job.edReq << '\n';
+    file << job.expLevel << '\n';
+    file << job.description << '\n'
+         << '\n';
+    file.close();
+}
+
+// FUNCTION DELETES JOB FROM JOBS.TXT
+void deleteFromFile(const vector<jobListing> &jobs)
+{
+    ofstream file("jobs.txt");
+
+    for (int i = 0; i < jobs.size(); i++)
+    {
+        file << jobs[i].id << '\n';
+        file << jobs[i].title << '\n';
+        file << jobs[i].company << '\n';
+        file << jobs[i].location << '\n';
+        file << jobs[i].salary << '\n';
+        file << jobs[i].edReq << '\n';
+        file << jobs[i].expLevel << '\n';
+        file << jobs[i].description << '\n'
+             << '\n';
+    }
+    file.close();
 }
