@@ -1,7 +1,6 @@
-# UAA201-Group-Project
-Computer Programming I Group Project 
-Local Jobs Board
-Justin WIllemsen, Danielle Purpura
+# Computer Programming I <br> Group Project: Local Jobs Board
+Justin WIllemsen<br>
+Danielle Purpura<br>
 Summer 2024
 
 
@@ -24,17 +23,17 @@ Employers have two options. Post a new position or remove an existing job after 
 # Add New Position
 ![image](https://github.com/user-attachments/assets/95ed808e-1a64-444e-994c-13faa98d0c0f)
 
-Entering the positions consists of:
+Positions consist of:<br>
 
-Title
-Company
-Location
-Salary
-Education Requirements
-Experience Level
-Job Description
+Title<br>
+Company<br>
+Location<br>
+Salary<br>
+Education Requirements<br>
+Experience Level<br>
+Job Description<br><br>
 
-These values are all stored in a vector, using a struct.
+These values are stored in a vector, using a struct.
 
 
 # Remove Position
