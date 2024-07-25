@@ -13,10 +13,10 @@ It also allows job seekers to:
     Filter jobs by title, location, salary range, or company
 */
 
-#include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
-#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -174,13 +174,13 @@ void seekerMenu(const vector<jobListing> &jobs)
         cout << " ___) |  __/  __/   <  __/ |    | |  | |  __/ | | | |_| |\n";
         cout << "|____/ \\___|\\___|_|\\_\\___|_|    |_|  |_|\\___|_| |_|\\__,_|\n";
         cout << "\n";
-        cout << "1. View All\n";
+        cout << "1. View All\n\n";
         cout << "Filter By:\n";
-        cout << "\t2. Title\n";
-        cout << "\t3. Location\n";
-        cout << "\t4. Starting Salary\n";
-        cout << "\t5. Education Requirement\n";
-        cout << "\t6. Experience Level\n";
+        cout << "2. Title\n";
+        cout << "3. Location\n";
+        cout << "4. Starting Salary\n";
+        cout << "5. Education Requirement\n";
+        cout << "6. Experience Level\n\n";
         cout << "7. Return to Main Menu\n";
         cout << "8. Exit\n";
         cout << "\n";
@@ -418,6 +418,7 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
         cout << "Enter a job title to filter by: ";
         cin.ignore();
         getline(cin, filter);
+        cout << '\n';
 
         for (int i = 0; i < jobs.size(); i++)
         {
@@ -432,6 +433,7 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
     {
         cout << "Enter a location to filter by (Anchorage, Fairbanks, Juneau, Matanuska Valley, Remote, Unknown): \n";
         getline(cin, filter);
+        cout << '\n';
 
         for (int i = 0; i < jobs.size(); i++)
         {
@@ -447,6 +449,7 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
         double salaryFilter;
         cout << "Enter a starting salary to filter by (30000, 50000, 70000, 90000, 110000, 0): \n";
         cin >> salaryFilter;
+        cout << '\n';
 
         for (int i = 0; i < jobs.size(); i++)
         {
@@ -461,6 +464,7 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
     {
         cout << "Enter an education level to filter by (High School, Associates Degree, Bachelors Degree, Masters Degree, No Education Required): \n";
         getline(cin, filter);
+        cout << '\n';
 
         for (int i = 0; i < jobs.size(); i++)
         {
@@ -475,6 +479,7 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
     {
         cout << "Enter an experience level to filter by (Entry-Level, Mid-Level, Senior-Level, No Experience Required): \n";
         getline(cin, filter);
+        cout << '\n';
 
         for (int i = 0; i < jobs.size(); i++)
         {
