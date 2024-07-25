@@ -1,0 +1,90 @@
+1
+Ice Cream Scooper
+Baskin Robbins
+Matanuska Valley
+30000
+High School
+Entry-Level
+Scoop up to 31 flavors for visiting customers.
+
+2
+Customer Service Representative
+XYZ Corporation
+Anchorage
+50000
+Associates Degree
+Entry-Level
+Assist customers with inquiries, provide information about products, and resolve issues to ensure a positive customer experience.
+
+3
+Marketing Coordinator
+Creative Solutions
+Juneau
+90000
+Bachelors Degree
+Mid-Level
+Support marketing campaigns by coordinating events, managing social media accounts, and analyzing market trends to boost brand awareness.
+
+4
+Software Developer
+Tech Time
+Anchorage
+110000
+Bachelors Degree
+Mid-Level
+Design, code, and test software applications.
+
+5
+Project Manager
+Global Enterprises
+Juneau
+90000
+Masters Degree
+Senior-Level
+Oversee project planning, execution, and delivery.
+
+6
+Financial Analyst
+Making Money Moves, LLC
+Remote
+110000
+No Education Required
+Mid-Level
+Manage up to three crypto markets and collect funds from customers.
+
+7
+Human Resources Manager
+PeopleFirst HR Solutions
+Anchorage
+50000
+Associates Degree
+Mid-Level
+Manage recruitment, employee relations, and compliance with labor laws to foster a productive and compliant work environment.
+
+8
+Operations Representative
+Logistical Logistics
+Matanuska Valley
+50000
+No Education Required
+Entry-Level
+Monitor and coordinate shipping and delivery of all carrots within the Matanuska Valley.
+
+9
+Real Estate Agent
+ReMax
+Fairbanks
+110000
+High School
+Mid-Level
+Show and sell houses.
+
+10
+Puzzle Master
+Cubed
+Remote
+90000
+No Education Required
+Senior-Level
+Creative influencer. Showcase puzzle solving abilities to the masses!
+
