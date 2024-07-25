@@ -5,7 +5,7 @@ Summer 2024
 
 
 # About
-  This program is a jobs board designed for both employers seeking employees and job seekers in need of employment. Existing job search platforms, such as Indeed and LinkedIn, often present an overwhelming number of results while searching, many of which are spammy or not in the desired location, even after filtering. This program addresses this issue by focusing on smaller communities and regions. This version is structured around Alaska. 
+This program is a C++ in-temrinal jobs board designed for both employers seeking employees and job seekers in need of employment. Existing job search platforms, such as Indeed and LinkedIn, often present an overwhelming number of results while searching, many of which are spammy or not in the desired location, even after filtering. This program addresses this issue by focusing on smaller communities and regions. This version is structured around Alaska. 
 
 
 # Main Menu
