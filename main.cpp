@@ -6,7 +6,7 @@ Danielle Prupura
 This program allows employers to:
     Add new job postings
         Postings are given ID starting with 1
-    Remove postings when a position is filled
+        Remove postings when a position is filled
 
 It also allows job seekers to:
     View all available job postings
@@ -392,6 +392,7 @@ void deleteJob(vector<jobListing> &jobs)
     int id;
     cout << "Enter the Job ID to remove.\n";
     cin >> id;
+    cout << '\n';
 
     for (int i = 0; i < jobs.size(); i++)
     {
@@ -399,12 +400,10 @@ void deleteJob(vector<jobListing> &jobs)
         {
             jobs.erase(jobs.begin() + i);
             deleteFromFile(jobs);
-            cout << "Job removed.\n";
+            cout << "Job removed.\n\n";
             break;
         }
     }
-
-    cout << "Job ID Not Found.\n";
 }
 
 /*
