@@ -398,14 +398,9 @@ void deleteJob(vector<jobListing> &jobs)
         if (id == jobs[i].id)
         {
             jobs.erase(jobs.begin() + i);
-<<<<<<< HEAD
-            cout << "Job removed.\n";
-            return;
-=======
             deleteFromFile(jobs);
             cout << "Job removed.\n";
             break;
->>>>>>> add-jobs-file
         }
     }
 
