@@ -1,5 +1,4 @@
-# Computer Programming I <br> Group Project: <br>Local Jobs Board
-Summer 2024
+# Computer Programming I Group Project: Local Jobs Board <br>(Summer 2024)
 
 
 # About
