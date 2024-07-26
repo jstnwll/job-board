@@ -1,5 +1,4 @@
 # Computer Programming I <br> Group Project: <br>Local Jobs Board
-Justin Willemsen<br>
 Summer 2024
 
 
