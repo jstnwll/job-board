@@ -1,6 +1,5 @@
 # Computer Programming I <br> Group Project: Local Jobs Board
 Justin Willemsen<br>
-Danielle Purpura<br>
 Summer 2024
 
 
