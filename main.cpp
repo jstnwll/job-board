@@ -415,9 +415,7 @@ void viewJobs(const vector<jobListing> &jobs, int filterBy)
     if (filterBy == 2) // VIEW JOBS BY TITLE
     {
         cout << "Enter a job title to filter by: ";
-        cin.ignore();
         getline(cin, filter);
-        cout << '\n';
 
         for (int i = 0; i < jobs.size(); i++)
         {
