@@ -1,12 +1,12 @@
 /*
 Alaska Jobs Directory.
+Group: Bits Please
 Justin Willemsen
-Danielle Prupura
 
 This program allows employers to:
     Add new job postings
-        Postings are given ID starting with 1
-        Remove postings when a position is filled
+    Postings are given ID starting with 1
+    Remove postings when a position is filled
 
 It also allows job seekers to:
     View all available job postings
