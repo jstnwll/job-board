@@ -33,7 +33,7 @@ A job ID is automatically generated after entry. This ID is used when listing an
 
 
 # Job Seeker Menu
-![image](https://github.com/user-attachments/assets/ae956d60-9012-4f9b-aaa0-096c3f2631e6)
+![image](https://github.com/user-attachments/assets/ce8502b3-ce65-438c-9403-00f4dbc0939d)
 
 Job seekers can view all available jobs or filter by each category, except for job description.
 
