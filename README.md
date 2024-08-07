@@ -1,4 +1,4 @@
-# Computer Programming I <br>Group Project: Local Jobs Board <br><br>
+# Computer Programming I <br>Final Project: Local Jobs Board <br><br>
 
 
 # About
